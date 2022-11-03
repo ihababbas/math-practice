@@ -1,3 +1,5 @@
+import math
+'''
 def factorin(number):
     fact = 1
     if number < 0:
@@ -10,7 +12,7 @@ def factorin(number):
     return fact
 
 print(factorin(5))
-
+'''
 
 def catalan(number):
     if number < 0:
@@ -18,9 +20,9 @@ def catalan(number):
     
     
     else:
-        resulte = factorin(2*number) / (factorin(number)* factorin(number +1))
+        resulte = math.factorial(2*number) / (math.factorial(number)* math.factorial(number +1))
         
-    return resulte
+    return int(resulte)
 
 
 for n in range(10):
