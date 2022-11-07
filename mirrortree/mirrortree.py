@@ -4,41 +4,42 @@ class Node:
         self.left = None
         self.right = None
 
+
 def areMirror(a, b):
-    if a is None and b is None:
-        return True
-    if a is None or b is None:
-        return False
-    if a.val != b.val:
-        return False
-
-    if a.left is not None and b.right is not None:
-        if a.left.val != b.right.val:
+    list1= [] 
+    list2= []
+    def inorder1(a):
+        if a is None:
+            return 
+        inorder1(a.left)
+        list1.append(a.val)
+        inorder1(a.right)      
+    
+    def inorder2(b):
+        if b is None:
+            return 
+        inorder2(b.left)
+        list2.append(b.val) 
+        inorder2(b.right)
+        
+    inorder1(a)
+    inorder2(b)
+    list2.reverse()
+    if len(list1) != len(list2):
+        return False 
+    for i in range(len(list1)):
+        if list1[i] == list2[i]:
+            pass       
+        else:
             return False
-        else: 
-            return areMirror(a.left,b.right)
-    if a.left is None and b.right is None:
-        pass
-    else:
-        return False
-    if a.right is not None and b.left is not None:
-        if a.right.val != b.left.val:
-            return False
-        else: 
-            return areMirror(a.right,b.left)
-    if a.right is None and b.left is None:
-        pass
-    else:
-        return False
-
-
     return True
     
-
 root1 = Node(1)
 root2 = Node(1)
 root1.left=  Node(2)
 root2.right= Node(2)
+root1.right=  Node(4)
+root2.left= Node(4)
 
 root1.left.right=  Node(3)
 root2.right.left= Node(3)
@@ -46,3 +47,19 @@ root2.right.left= Node(3)
 
 
 print(areMirror(root1,root2))
+    
+
+
+   
+        
+        
+        
+        
+        
+
+   
+
+   
+
+
+  
