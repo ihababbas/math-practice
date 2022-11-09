@@ -16,5 +16,6 @@ def BtoD(number):
 
 
 DtoB(78)
+
 print("\n")
 BtoD(1001110)

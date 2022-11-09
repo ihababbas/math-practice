@@ -6,14 +6,15 @@ class Node:
 
 
 def areMirror(a, b):
-    list1= [] 
+    list1= [] # 3 1
     list2= []
     def inorder1(a):
         if a is None:
             return 
         inorder1(a.left)
         list1.append(a.val)
-        inorder1(a.right)      
+        inorder1(a.right)
+        
     
     def inorder2(b):
         if b is None:
@@ -38,8 +39,7 @@ root1 = Node(1)
 root2 = Node(1)
 root1.left=  Node(2)
 root2.right= Node(2)
-root1.right=  Node(4)
-root2.left= Node(4)
+
 
 root1.left.right=  Node(3)
 root2.right.left= Node(3)
